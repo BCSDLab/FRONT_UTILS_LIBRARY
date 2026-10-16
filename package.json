@@ -1,46 +1,13 @@
 {
-  "name": "@bcsdlab/utils",
-  "version": "0.0.15",
-  "main": "dist/index.js",
-  "description": "bcsdlab 프론트엔드 유틸 모음입니다.",
-  "type": "module",
-  "license": "MIT",
+  "name": "bcsdlab-front-packages",
+  "private": true,
+  "packageManager": "pnpm@11.11.0",
   "scripts": {
-    "build": "yarn clean && yarn build:tsc && yarn build:js",
-    "build:tsc": "yarn tsc --emitDeclarationOnly",
-    "build:js": "node build.js",
-    "clean": "rm -rf dist"
+    "build": "pnpm -r build",
+    "changeset": "changeset",
+    "release": "pnpm build && changeset publish"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BCSDLab/FRONT_UTILS_LIBRARY.git"
-  },
-  "keywords": [
-    "frontend",
-    "utils",
-    "bcsdlab"
-  ],
-  "bugs": {
-    "url": "https://github.com/BCSDLab/FRONT_UTILS_LIBRARY/issues"
-  },
-  "homepage": "https://github.com/BCSDLab/FRONT_UTILS_LIBRARY#readme",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
   "devDependencies": {
-    "esbuild": "^0.20.2",
-    "typescript": "^5.4.4"
-  },
-  "dependencies": {
-    "@types/josa": "^3.0.5",
-    "josa": "^3.0.1"
+    "@changesets/cli": "^3.0.3"
   }
 }
