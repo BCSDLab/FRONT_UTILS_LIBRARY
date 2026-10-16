@@ -6,14 +6,15 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "build": "yarn clean && yarn build:tsc && yarn build:js",
-    "build:tsc": "yarn tsc --emitDeclarationOnly",
+    "build": "pnpm clean && pnpm build:tsc && pnpm build:js",
+    "build:tsc": "tsc --emitDeclarationOnly",
     "build:js": "node build.js",
     "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BCSDLab/FRONT_KOIN_LIBRARY.git"
+    "url": "git+https://github.com/BCSDLab/FRONT_UTILS_LIBRARY.git",
+    "directory": "packages/koin"
   },
   "keywords": [
     "koin",
@@ -21,9 +22,9 @@
     "bcsdlab"
   ],
   "bugs": {
-    "url": "https://github.com/BCSDLab/FRONT_KOIN_LIBRARY/issues"
+    "url": "https://github.com/BCSDLab/FRONT_UTILS_LIBRARY/issues"
   },
-  "homepage": "https://github.com/BCSDLab/FRONT_KOIN_LIBRARY#readme",
+  "homepage": "https://github.com/BCSDLab/FRONT_UTILS_LIBRARY/tree/main/packages/koin#readme",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -37,9 +38,13 @@
   ],
   "devDependencies": {
     "esbuild": "^0.20.2",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.4",
+    "axios": "^0.27.2"
   },
   "peerDependencies": {
     "axios": "^0.27.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
